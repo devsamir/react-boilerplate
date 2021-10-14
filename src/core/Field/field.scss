@@ -1,0 +1,46 @@
+@use "../../variable" as *;
+.field--container {
+  // flex my-2 flex-col
+  display: flex;
+  margin: 0.8rem 0;
+  flex-direction: column;
+}
+.field--full-width {
+  width: 100%;
+}
+.field--label {
+  font-size: 1.6rem;
+  margin: 0.8rem 0;
+}
+.field--input {
+  // px-4 py-2 focus:outline-none rounded transition-colors
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9px;
+  transition: color 0.3s;
+  font-size: 1.6rem;
+  &:focus {
+    outline: none;
+  }
+}
+.field--primary {
+  border-color: rgba($gray3, 0.7);
+  &:focus {
+    border-color: $primary-color;
+    outline: 4px solid rgba($primary-tint2, 0.2);
+  }
+}
+.field--error {
+  border-color: rgba($danger-color, 0.7);
+  &:focus {
+    outline: 2px solid rgba($danger-color, 0.2);
+  }
+}
+.field--error-text {
+  color: $danger-color;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.4rem;
+  text-transform: capitalize;
+}

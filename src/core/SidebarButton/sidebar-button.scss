@@ -1,0 +1,19 @@
+@use "../../variable" as *;
+.sidebar-button--active {
+  background-color: rgba($gray1, 0.3);
+}
+.sidebar-button--button {
+  border: none;
+  font-size: 1.6rem;
+  padding: 1.2rem 1.6rem;
+  background-color: transparent;
+  color: $gray1;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  &:hover {
+    background-color: rgba($gray1, 0.3);
+  }
+}

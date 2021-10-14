@@ -1,0 +1,42 @@
+@use "../../variable" as *;
+.sidebar-dropdown--button {
+  font-size: 1.6rem;
+  border: none;
+  padding: 1.2rem 1.6rem;
+  background-color: transparent;
+  color: $gray1;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  &:hover {
+    background-color: rgba($gray1, 0.3);
+  }
+}
+.sidebar-dropwdown--open {
+  max-height: 30rem;
+}
+.sidebar-dropwdown--close {
+  max-height: 0;
+}
+.sidebar-dropdown--container {
+  transition: max-height 0.3s;
+  overflow: hidden;
+}
+.sidebar-dropdown--link-active {
+  background-color: rgba($gray1, 0.3);
+}
+.sidebar-dropdown--link {
+  border: none;
+  font-size: 1.6rem;
+  padding: 1.2rem 1.6rem 1.2rem 6.4rem;
+  background-color: transparent;
+  color: $gray1;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  &:hover {
+    background-color: rgba($gray1, 0.3);
+  }
+}

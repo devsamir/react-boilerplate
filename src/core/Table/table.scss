@@ -1,0 +1,262 @@
+@use "../../variable" as *;
+.table--main-container {
+  max-width: 120rem;
+  margin: 0 2.4rem;
+}
+.table--search-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+  margin-left: auto;
+  width: 24rem;
+  flex-direction: column;
+  & label {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  & small {
+    font-size: 1.2rem;
+    margin-top: 0.4rem;
+  }
+}
+.table--search-input {
+  border: 1px solid rgba($gray3, 0.7);
+  padding: 0.8rem 1.6rem;
+  border-radius: 9px;
+  transition: all 0.3s;
+  font-size: 1.4rem;
+  &:focus {
+    border-color: $primary-color;
+    outline: 4px solid rgba($primary-tint2, 0.2);
+  }
+}
+.table--container {
+  overflow-x: auto;
+  overflow-y: auto;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.table--table {
+  position: relative;
+  table-layout: fixed;
+  border-collapse: separate;
+  min-width: 100%;
+}
+.table--th-first {
+  position: sticky;
+  left: 0;
+  top: 0;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  color: $gray1;
+  z-index: 20;
+  cursor: pointer;
+  text-align: left;
+  width: 50px;
+}
+.table--th {
+  // sticky top-0 bg-${color}-500 border border-solid border-${color}-500 text-white z-10 cursor-pointer p-2 text-left
+  position: sticky;
+  top: 0;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  color: $gray1;
+  z-index: 10;
+  cursor: pointer;
+  padding: 0.8rem;
+  text-align: left;
+  font-size: 1.4rem;
+}
+.table--th-content {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.table--row-loading {
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    background-color: rgba($primary-color, 0.3);
+  }
+}
+.table--row-loading-stripe {
+  background-color: rgba($primary-color, 0.1);
+}
+
+.table--td-loading-first {
+  padding: 0.8rem;
+  color: $gray4;
+  border: 1px solid rgba($gray4, 0.2);
+  width: 0px;
+}
+.table--td-loading {
+  // p-2 text-left text-gray-700 border border-gray-700 border-opacity-20
+  padding: 0.8rem;
+  text-align: left;
+  color: $gray4;
+  border: 1px solid rgba($gray4, 0.2);
+}
+.table--row {
+  // cursor-pointer relative hover:bg-${color}-500 hover:bg-opacity-25
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    background-color: rgba($primary-color, 0.3);
+  }
+}
+.table--row-selected {
+  background-color: rgba($primary-color, 0.3);
+}
+.table--row-first {
+  position: sticky;
+  left: 0;
+  padding: 0.8rem;
+  text-align: left;
+  color: $gray4;
+  font-size: 1.4rem;
+  width: 50px;
+  border: 1px solid rgba($gray4, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table--icon {
+  transition: all 0.3s;
+  color: $primary-color;
+  font-size: 1.6rem;
+}
+.table--icon-visible {
+  opacity: 1;
+}
+.table--icon-hidden {
+  opacity: 0;
+}
+
+.table--row {
+  padding: 0.8rem;
+  text-align: left;
+  color: $gray4;
+  font-size: 1.4rem;
+  border: 1px solid rgba($gray4, 0.2);
+}
+.table--row-stripe {
+  background-color: rgba($primary-color, 0.1);
+}
+.table--row-sticky {
+  position: sticky;
+  left: 0;
+}
+.table--row-text {
+  cursor: text;
+}
+.table--tools-container {
+  display: flex;
+  margin: 1.2rem 0.8rem;
+}
+.table--tools {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.table--limit {
+  margin-right: 1.6rem;
+}
+.table--select-limit {
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  background-color: $gray1;
+  border: 1px solid rgba($gray4, 0.2);
+  outline: none;
+}
+.table--info-container {
+  margin-right: 4.8rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.table--button-container {
+  // flex items-center
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+// border-none bg-transparent text-xl outline-none p-2 flex items-center mx-4 cursor-pointer
+.table--button {
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  outline: none;
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.table--page {
+  font-size: 1.4rem;
+}
+// ******************************
+// SKLETON
+// *****************************
+.table--skeleton-box {
+  display: inline-block;
+  height: 1.4rem;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba($primary-color, 0.2);
+  width: 100%;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(#fff, 0) 0,
+      rgba(#fff, 0.2) 20%,
+      rgba(#fff, 0.5) 60%,
+      rgba(#fff, 0)
+    );
+    animation: shimmer 2s infinite;
+    content: "";
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
+.table--skeleton-box-32 {
+  display: inline-block;
+  height: 1.4rem;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba($primary-color, 0.2);
+  width: 12.8rem;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(#fff, 0) 0,
+      rgba(#fff, 0.2) 20%,
+      rgba(#fff, 0.5) 60%,
+      rgba(#fff, 0)
+    );
+    animation: shimmer 2s infinite;
+    content: "";
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}

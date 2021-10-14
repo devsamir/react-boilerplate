@@ -1,0 +1,40 @@
+@use "../../variable" as *;
+.error-box--container {
+  display: flex;
+  align-items: center;
+  margin-top: 3.2rem;
+  flex-direction: column;
+  padding: 1.6rem 3.2rem;
+  border-radius: 12px;
+}
+.error-box--icon {
+  font-size: 4.8rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: $danger-color;
+}
+.error-box--title {
+  display: inline-block;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+  color: $danger-color;
+}
+.error-box--text {
+  display: inline-block;
+  font-size: 1.4rem;
+  text-align: center;
+  color: $danger-color;
+}
+.error-box--margin-top {
+  margin-top: 1.6rem;
+}
+.error-box--button {
+  // bg-red-500 text-gray-50 hover:bg-red-600
+  background-color: $danger-color;
+  color: #e9ecef;
+  &:hover {
+    background-color: $danger-shade;
+  }
+}
